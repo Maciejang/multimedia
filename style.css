@@ -1,0 +1,19 @@
+.baner{
+    position: absolute;
+    width: 70%;
+    height: auto;
+    left: 20vw;
+    z-index: 0;
+}
+
+.logo{
+    left: 42vw;
+    position: absolute;
+    z-index: 1;
+    animation: spin 10s linear 0s infinite forwards;
+}
+
+@keyframes spin {
+    0% {transform: rotate(0deg)};
+    100%{transform: rotate(360deg)};
+}
