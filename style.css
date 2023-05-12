@@ -1,3 +1,6 @@
+*{
+    z-index: 0;
+}
 main{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -14,19 +17,34 @@ main{
 
 .logo{
     position: absolute;
-    background-color: yellow;
+    background-color: rgb(11, 41, 105);
     width: 10vw;
     height: 10vw;
     top: -5%;
     left: 44%;
     transform: translate(-50%, -50%);
     animation: spin 10s 0s infinite;
+    z-index: 1;
 }
 
 .baner{
     grid-area: 1 / 2 / 4 / 5;
     background-color: blue;
     width: 60vw;
+    height: 50vh;
+}
+
+.page{
+    position: fixed;
+    background-color: rgb(148, 148, 156);
+    width: 0vw; /*70vw*/
+    height: 0vh; /*70vh*/
+    margin-top: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
 }
 
 .mainBox{
@@ -40,8 +58,8 @@ main{
 
 
 .box{
-    margin-top: 50%;
-    background-color: blue;
+    margin-top: 30%;
+    background-color: rgb(141, 141, 209);
     width: 5vw;
     height: 5vw;
     margin-left: 40%;
