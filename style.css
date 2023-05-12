@@ -6,21 +6,29 @@ main{
     grid-row-gap: 0px;
     width: 80vw;
     height: 70vh;
-    margin-left: 5%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .logo{
     position: absolute;
     background-color: yellow;
-    height: 150px;
-    width: 150px;
-    margin-left: 35vw;
+   /* height: 150px;
+    width: 150px;*/
+    width: 10vw;
+    height: 10vw;
+    top: -5%;
+    left: 44%;
+    transform: translate(-50%, -50%);
     animation: spin 10s 0s infinite;
 }
 
 .baner{
     grid-area: 1 / 2 / 4 / 5;
     background-color: blue;
+    width: 60vw;
 }
 
 .mainBox{
@@ -32,11 +40,12 @@ main{
     grid-row-gap: 0px;
 }
 
+
 .box{
     margin-top: 50%;
     background-color: blue;
-    width: 50px;
-    height: 50px;
+    width: 5vw;
+    height: 5vw;
     margin-left: 40%;
     cursor: pointer;
 }
@@ -65,3 +74,19 @@ main{
    50%{transform: rotate(360deg);} 
    100%{transform: rotate(0deg);}
 }
+
+@media only screen and (max-width: 600px) {
+    .baner{
+        width: 110%;
+    }   
+    .box{
+        width: 10vw;
+        height: 10vw;
+    }
+}    
+@media only screen and (min-width: 1000px) {
+    .box{
+        width: 3.5vw;
+        height: 3.5vw;
+    }
+}    
