@@ -104,9 +104,26 @@ main{
     grid-area: 2 / 3 / 3 / 4;
 }
 
-@keyframes showPage {
-    0%{opacity: 1; width: 0vw; height: 0vh;}
-    100%{opacity: 0; width: 70vw; height: 70vh;}
+.showOpenAnim1{
+    animation: showPage1 0.8s linear 0s 1 ;
+}
+
+.showOpenAnim2{
+    animation: showPage2 0.8s linear 0s 1 ;
+}
+
+@keyframes showPage1 {
+    0%{opacity: 0; width: 0vw; height: 0vh; transform: rotate(0deg);}
+    50%{ transform: rotate(360deg);}
+    100%{opacity: 1; width: 70vw; height: 70vh;}
+}
+
+@keyframes showPage2 {
+    0%{opacity: 0; top: -200%; left: 10%}
+    50%{ transform: rotate(20deg); top: 30%;}
+    55%{transform: rotate(-20deg);}
+    60%{transform: rotate(0deg);}
+    100%{opacity: 1; width: 70vw; height: 70vh;}
 }
 
 @keyframes spin {
@@ -133,7 +150,7 @@ main{
         width: 3.5vw;
         height: 3.5vw;
     }
-}    
+}      
 
 
 /** Mozilla Firefox */
@@ -145,6 +162,7 @@ main{
         .box{
             width: 5vw;
             height: 5vw;
+            margin-top: 15vh;
         }
         .logo{
             width: 10vw;
