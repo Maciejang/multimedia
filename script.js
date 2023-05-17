@@ -1,7 +1,8 @@
 let page = document.querySelector(".page");
+let pageContent = document.querySelector(".pageContent");
 let opened = false
 
-function openPage(animNum){
+function openPage(animNum, content){
     if(opened == true){
         return;
     }
@@ -25,13 +26,14 @@ function openPage(animNum){
     setTimeout(_=>{
         page.classList.remove("showOpenAnim" + animNum);
     }, 800)
+
+     pageContent.innerHTML = content;
 }
 
 document.querySelector(".box1").addEventListener("click", _=>{
     let rand = Math.floor(1+Math.random()*2);
-    openPage(rand);
+    openPage(rand, `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquid neque laudantium illo, in, magni, ut maxime saepe temporibus repellendus velit. Id molestias eos eveniet earum perferendis facilis amet nam!`);
 })
-
 document.querySelector(".close").addEventListener("click", _=>{
     page.style.width = "0vw";
     page.style.height = "0vh";
@@ -39,4 +41,5 @@ document.querySelector(".close").addEventListener("click", _=>{
     document.querySelector(".close").style.width = "0vw";
     document.querySelector(".close").style.height = "0vh";
     opened = false;
+    pageContent.innerHTML = "";
 })
