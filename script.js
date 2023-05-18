@@ -1,27 +1,18 @@
+//Variables
 let page = document.querySelector(".page");
 let pageContent = document.querySelector(".pageContent");
 let opened = false
+let pageContentArray = [`lorem ipsum1`, `lorem ipsum2`, `lorem ipsum3`, `lorem ipsum4`, `lorem ipsum5`, `lorem ipsum6`];
 
+//page functionality
 function openPage(animNum, content){
     if(opened == true){
         return;
     }
+    
     opened = true;
-    page.style.width = "70vw";
-    page.style.height = "70vh";
-    page.style.opacity = 1;
-    if(screen.width >= 1000){
-        document.querySelector(".close").style.width = "2vw";
-        document.querySelector(".close").style.height = "2vw";
-    }
-    else if(screen.width < 1000 && screen.width > 600){
-        document.querySelector(".close").style.width = "4vw";
-        document.querySelector(".close").style.height = "4vw";
-    }
-    else if(screen.width <= 600){
-        document.querySelector(".close").style.width = "7vw";
-        document.querySelector(".close").style.height = "7vw";
-    }
+    page.style.visibility = "visible";
+
     page.classList.add("showOpenAnim" + animNum);
     setTimeout(_=>{
         page.classList.remove("showOpenAnim" + animNum);
@@ -29,17 +20,23 @@ function openPage(animNum, content){
 
      pageContent.innerHTML = content;
 }
-
-document.querySelector(".box1").addEventListener("click", _=>{
-    let rand = Math.floor(1+Math.random()*2);
-    openPage(rand, `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi aliquid neque laudantium illo, in, magni, ut maxime saepe temporibus repellendus velit. Id molestias eos eveniet earum perferendis facilis amet nam!`);
-})
+//page close button
 document.querySelector(".close").addEventListener("click", _=>{
-    page.style.width = "0vw";
-    page.style.height = "0vh";
-    page.style.opacity = 0;
-    document.querySelector(".close").style.width = "0vw";
-    document.querySelector(".close").style.height = "0vh";
+    page.style.visibility = "hidden";
     opened = false;
     pageContent.innerHTML = "";
 })
+
+//page boxes listeners
+
+const boxes = document.querySelectorAll(".mainBox");
+
+const boxPressed = e => {
+    let rand = Math.floor(1+Math.random()*2);
+    openPage(rand, pageContentArray[e.target.id-1])
+  }
+
+for (let box of boxes) {
+  box.addEventListener("click", boxPressed)
+}
+
