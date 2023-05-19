@@ -1,6 +1,7 @@
 //Variables
 let page = document.querySelector(".page");
 let pageContent = document.querySelector(".pageContent");
+let box = document.querySelectorAll(".box");
 let opened = false
 let pageContentArray = [`lorem ipsum1`, `lorem ipsum2`, `lorem ipsum3`, `lorem ipsum4`, `lorem ipsum5`, `lorem ipsum6`];
 
@@ -46,3 +47,27 @@ for (let box of boxes) {
   box.addEventListener("click", boxPressed)
 }
 
+
+//mouse
+
+// document.addEventListener('mousemove', handleMouseMove);
+
+
+// let mouseX;
+// let mouseY;
+
+// function handleMouseMove(event) {
+//   const mX = event.pageX;
+//   const mY = event.pageY;
+//   mouseX = mX;
+//   mouseY = mY;
+
+// }
+
+// function calcAngleDegrees(x, y) {
+//   return Math.atan2(y, x) * 180 / Math.PI;
+// }
+
+// box[0].addEventListener("mouseover", _=>{
+//   console.log(calcAngleDegrees(box[0].getBoundingClientRect().left, mouseY))
+// });
