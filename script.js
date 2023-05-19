@@ -32,8 +32,14 @@ document.querySelector(".close").addEventListener("click", _=>{
 const boxes = document.querySelectorAll(".mainBox");
 
 const boxPressed = e => {
-    let rand = Math.floor(1+Math.random()*2);
-    openPage(rand, pageContentArray[e.target.id-1])
+  let rand = Math.floor(1 + Math.random() * 2);
+  let boxId = parseInt(e.target.id);
+  
+  console.log(boxId);
+  if (!isNaN(boxId)) {
+    let rand = Math.floor(1 + Math.random() * 2);
+    openPage(rand, pageContentArray[boxId - 1]);
+  }
   }
 
 for (let box of boxes) {
