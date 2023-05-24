@@ -3,7 +3,6 @@
 }
 body{
     overflow-x: hidden;
-
 }
 main{
     display: grid;
@@ -94,18 +93,6 @@ main{
     height: 100%;
     top: 200%;
 }
-.video1{
-    top: 200%;
-}
-.video2{
-    top: 350%;
-}
-.video3{
-    top: 500%;
-}
-.video4{
-    top: 650%;
-}
 footer{
     font-family: 'Comic Neue', cursive;
     background-color: rgb(0,0,0);
@@ -126,7 +113,18 @@ footer{
     cursor: pointer;
 }
 
-
+.video1{
+    top: 200%;
+}
+.video2{
+    top: 350%;
+}
+.video3{
+    top: 500%;
+}
+.video4{
+    top: 650%;
+}
 .box:nth-of-type(1){
     grid-area: 1 / 1 / 2 / 2; 
 }
@@ -205,6 +203,13 @@ footer{
     100%{transform: rotate3d(0,0,1,360deg);}
 }
 
+@keyframes anim3 {
+    0%{background-color: rgb(255,0,0);}
+    33%{background-color: rgb(255, 255, 0);}
+    66%{background-color: rgb(255,0,255);}
+    100%{background-color: rgb(255,0,0);}
+}
+
 @media only screen and (max-width: 600px) {
     .baner{
         width: 110%;
@@ -237,7 +242,6 @@ footer{
 
 
 /** Mozilla Firefox */
-/* Add -moz- prefix for Firefox */
 @-moz-document url-prefix() {
         .baner{
             width: 105%;
