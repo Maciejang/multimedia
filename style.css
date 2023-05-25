@@ -19,6 +19,21 @@ main{
 }
 
 /* styles */
+.volumeBarDiv{
+    position: fixed;
+    top: 50%;
+    left: 2%;
+    z-index: 1;
+    transform: rotate(-90deg);
+    background-color: rgb(148, 148, 148);
+    height: 3vh;
+    width: 15vh;
+    border-radius: 50px;
+}
+.volumeBar{
+    width: 14vh;
+    margin-right: 50%;
+}
 .logo{
     position: absolute;
     background-color: rgb(11, 41, 105);

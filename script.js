@@ -2,6 +2,8 @@
 let page = document.querySelector(".page");
 let pageContent = document.querySelector(".pageContent");
 let box = document.querySelectorAll(".box");
+let backgroundAudio = document.querySelector(".bgMusic");
+let volumeSlider = document.querySelector(".volumeBar");
 let opened = false
 let pageContentArray = [`lorem ipsum1`, `lorem ipsum2`, `lorem ipsum3`, `lorem ipsum4`, `lorem ipsum5`, `lorem ipsum6`];
 
@@ -21,6 +23,15 @@ function openPage(animNum, content){
 
      pageContent.innerHTML = content;
 }
+
+function changeBGvolume(volumeValue){
+  backgroundAudio.volume = volumeValue/100
+}
+
+changeBGvolume(volumeSlider.value);
+volumeSlider.addEventListener("change", _=>{
+   changeBGvolume(volumeSlider.value)
+})
 //page close button
 document.querySelector(".close").addEventListener("click", _=>{
     page.style.visibility = "hidden";
