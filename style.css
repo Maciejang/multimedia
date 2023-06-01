@@ -1,5 +1,6 @@
 *{
     z-index: 0;
+    
 }
 body{
     overflow-x: hidden;
@@ -36,13 +37,11 @@ main{
 }
 .logo{
     position: absolute;
-    background-color: rgb(11, 41, 105);
     width: 10vw;
     height: 10vw;
     top: -5%;
     left: 44%;
     transform: translate(-50%, -50%);
-    animation: spin 10s 0s infinite;
     z-index: 1;
 }
 
@@ -120,7 +119,58 @@ footer{
     margin-left: -1%;
 }
 
-
+.cube {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    transform-style: preserve-3d;
+    transform: rotateX(240deg) rotateY(-5deg) rotateZ(-155deg);
+    animation: spin 1000s 0s infinite;
+  }
+  
+  .back {
+    transform: translateZ(-100px);
+    background-color: rgb(11, 41, 105);
+  }
+  
+  .front {
+    transform: rotateX(90deg) treansformZ(100px);
+    transform-origin: bottom;
+    background-color: rgb(36, 90, 207);
+  }
+  
+  .left {
+    width: 100px;
+    transform: translateZ(-100px) rotateY(90deg);
+    transform-origin: right;
+    background-color: rgb(7, 56, 163);
+  }
+  .right{
+    transform: rotateY(90deg);
+    transform-origin: left;
+    background-color: rgb(7, 56, 163);
+  }
+  .top{
+    transform: rotateX(90deg) translateY(-100px);
+    transform-origin: top;
+    background-color: rgb(70, 120, 226);
+  }
+  .bottom{
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    background-color: rgb(70, 120, 226);
+  }
+  .side {
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-image: url("images/background.png");
+  }
+  
+  
 /* events and positioning */
 
 .close:hover{
@@ -203,9 +253,8 @@ footer{
 }
 
 @keyframes spin {
-   0%{transform: rotate(0deg);}
-   50%{transform: rotate(360deg);} 
-   100%{transform: rotate(0deg);}
+   0%{transform: rotate3d(1,1,1, 0deg);}
+   100%{transform: rotate3d(1, 1, 1, 100000deg);}
 }
 
 @keyframes anim {
@@ -215,16 +264,8 @@ footer{
 
 @keyframes anim2 {
     0%{transform: rotate3d(0,0,1,0deg);}
-    100%{transform: rotate3d(0,0,1,360deg);}
+    100%{transform: rotate3d(0,0,1,100deg);}
 }
-
-@keyframes anim3 {
-    0%{background-color: rgb(255,0,0);}
-    33%{background-color: rgb(255, 255, 0);}
-    66%{background-color: rgb(255,0,255);}
-    100%{background-color: rgb(255,0,0);}
-}
-
 @media only screen and (max-width: 600px) {
     .baner{
         width: 110%;
@@ -286,3 +327,5 @@ footer{
             }
         }    
 }
+
+
