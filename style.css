@@ -133,7 +133,7 @@ footer{
     color: rgb(255, 255, 255);
     text-align: center;
     position: absolute;
-    top: 600%;
+    top: 250%;
     width: 105%;
     height: 2.5rem;    
     margin-left: -1%;
@@ -209,15 +209,6 @@ footer{
 
 .video1{
     top: 200%;
-}
-.video2{
-    top: 350%;
-}
-.video3{
-    top: 500%;
-}
-.video4{
-    top: 650%;
 }
 .box:nth-of-type(1){
     grid-area: 1 / 1 / 2 / 2; 
